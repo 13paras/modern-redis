@@ -13,12 +13,13 @@ app.use("/restaurant", restaurantRouter);
 app.use("/cuisines", cuisinesRouter);
 
 // Middleware will always be used in the last.
-app.use(errorHandler)
+app.use(errorHandler);
 
 app
   .listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
   })
   .on("error", (err) => {
+    console.log(err.message);
     throw new Error(err.message);
   });

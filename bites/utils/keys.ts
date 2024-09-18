@@ -5,3 +5,5 @@ export function getKeyName(...args: string[]){
 }
 
 // getKeyName('restaurant', '123', 'reviews')
+
+export const restaurantKeyById = (id: string) => getKeyName('restaurants', id);
