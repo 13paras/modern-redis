@@ -1,0 +1,47 @@
+// Steps to initialize node js Directory in typescript
+
+Step1 -> Run the following command in the terminal
+- npm init -y
+- npm install express nanoid redis zod
+-npm install -D @types/express @types/node tsx typescript
+- npm install --save-dev @types/express @types/node @types/redis @types/zod
+
+Step2 -> Do these changes in the package.json file
+
+"type": "module",
+  "scripts": {
+    "dev": "tsx watch --env-file .env index.ts",
+    "build": "tsc",
+    "start": "node --evn-file .env dist/index.js"
+  },
+
+Step 3 -> Create a tsconfig.json file
+
+{
+  "compilerOptions": {
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+
+    /* If transpiling with TypeScript: */
+    "module": "NodeNext",
+    "outDir": "dist",
+    "sourceMap": true,
+
+    /* If your code doesn't run in the DOM: */
+    "lib": ["es2022"]
+  }
+}
+
+Link for the tsconfig cheatsheet: https://www.totaltypescript.com/tsconfig-cheat-sheet
